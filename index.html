@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>hackersnooze</title>
+
+    <link rel="icon" href="data:image/gif;base64,R0lGODlhEAAQAAAAACwAAAAAAQABAAACASgAOw==">
+
+    <style>
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      #root {
+        font-family: Helvetica;
+        display: flex;
+        justify-content: center;
+      }
+
+      .main {
+        width: 600px;
+      }
+
+      .conversation {
+        background: #ddd;
+      }
+
+      .comment-text {
+        line-height: 1.2;
+        word-wrap: break-word;
+        overflow: hidden;
+        max-width: 600px;
+        min-height: 100px;
+        max-height: 100px;
+        margin: .5em;
+      }
+
+      .comment {
+        background: #fff;
+        margin: 1em;
+        padding: 1em;
+        border: 1px solid #555;
+        /*width: 400px;*/
+        cursor: pointer;
+      }
+
+      .expand-btn-label {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+      .expand-btn-label::after {
+        content: "Expand";
+      }
+      .expand-btn {
+        display: none;
+      }
+      .expand-btn:checked ~ .comment-text {
+        max-height: 1000px;
+        height: auto;
+      }
+      .expand-btn:checked ~ .expand-btn-label::after {
+        content: "Collapse";
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+    <div id='root'></div>
+    <script src='./index.js'></script>
+  </body>
+</html>
